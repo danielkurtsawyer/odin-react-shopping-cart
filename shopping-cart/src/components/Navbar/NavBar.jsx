@@ -4,8 +4,8 @@ import { NavLink } from "react-router-dom";
 
 function NavBar() {
   return (
-    <div className={styles.navbar}>
-      <span>ShoppingCentral</span>
+    <header className={styles.navbar}>
+      <span className={styles.companyName}>ShoppingCentral</span>
       <div className={styles.navlinks}>
         <NavLink className={styles.navlink} to="/">
           Home
@@ -17,7 +17,7 @@ function NavBar() {
           Cart
         </NavLink>
       </div>
-    </div>
+    </header>
   );
 }
 export default NavBar;
