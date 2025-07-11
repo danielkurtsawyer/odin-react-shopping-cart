@@ -13,7 +13,7 @@
 }
 
 .navbar .companyInfo img {
-  height: 100%;
+  height: 70px;
 }
 
 .navbar .companyName {
@@ -21,6 +21,10 @@
   font-weight: bold;
   font-size: 36px;
   color: #1f1f1f;
+}
+
+.link {
+  text-decoration: none;
 }
 
 .navlinks {

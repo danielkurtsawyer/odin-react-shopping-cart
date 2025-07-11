@@ -1,17 +1,20 @@
 import styles from "./navbar.module.css";
 import "./navbar.css";
-import { NavLink } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 
 function NavBar() {
   return (
     <header className={styles.navbar}>
-      <div className={styles.companyInfo}>
-        <img
-          src="https://upload.wikimedia.org/wikipedia/commons/f/f2/Shopping-cart-transparent-icon.png"
-          alt=""
-        />
-        <span className={styles.companyName}>ShoppingCentral</span>
-      </div>
+      <Link className={styles.link} to="/">
+        <div className={styles.companyInfo}>
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/f/f2/Shopping-cart-transparent-icon.png"
+            alt=""
+          />
+          <div className={styles.companyName}>ShoppingCentral</div>
+        </div>
+      </Link>
+
       <div className={styles.navlinks}>
         <NavLink className={styles.navlink} to="/">
           Home
