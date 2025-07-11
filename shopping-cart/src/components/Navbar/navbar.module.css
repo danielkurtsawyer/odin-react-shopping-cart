@@ -1,14 +1,26 @@
 .navbar {
+  height: 100px;
   padding: 12px 16px;
   background-color: #ffffff;
   display: flex;
   justify-content: space-between;
 }
 
+.navbar .companyInfo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.navbar .companyInfo img {
+  height: 100%;
+}
+
 .navbar .companyName {
   font-family: "Work Sans";
   font-weight: bold;
   font-size: 36px;
+  color: #1f1f1f;
 }
 
 .navlinks {
@@ -20,7 +32,7 @@
 
 .navlink {
   text-decoration: none;
-  color: black;
+  color: #1f1f1f;
   font-family: "Inter";
   font-size: 16px;
 }

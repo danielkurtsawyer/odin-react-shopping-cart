@@ -5,7 +5,13 @@ import { NavLink } from "react-router-dom";
 function NavBar() {
   return (
     <header className={styles.navbar}>
-      <span className={styles.companyName}>ShoppingCentral</span>
+      <div className={styles.companyInfo}>
+        <img
+          src="https://upload.wikimedia.org/wikipedia/commons/f/f2/Shopping-cart-transparent-icon.png"
+          alt=""
+        />
+        <span className={styles.companyName}>ShoppingCentral</span>
+      </div>
       <div className={styles.navlinks}>
         <NavLink className={styles.navlink} to="/">
           Home
