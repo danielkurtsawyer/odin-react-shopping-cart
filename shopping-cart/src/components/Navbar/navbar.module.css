@@ -44,3 +44,14 @@
 .navlink:hover {
   color: #005eb2;
 }
+
+.cart {
+  composes: navlink;
+  display: flex;
+  align-items: center;
+}
+
+.cart img:hover {
+  filter: invert(22%) sepia(72%) saturate(2684%) hue-rotate(193deg)
+    brightness(93%) contrast(104%);
+}

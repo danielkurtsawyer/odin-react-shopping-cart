@@ -24,9 +24,10 @@ function NavBar({ itemsInCart }) {
         <NavLink className={styles.navlink} to="shop">
           Shop
         </NavLink>
-        <Link className={styles.navlink} to="cart">
-          <img src={ShoppingCart} alt="Cart" /> ({itemsInCart})
-        </Link>
+        <NavLink className={styles.cart} to="cart">
+          <img src={ShoppingCart} alt="Cart" />
+          <span>({itemsInCart})</span>
+        </NavLink>
       </div>
     </header>
   );
