@@ -12,5 +12,6 @@
   font-size: 24px;
 }
 .homeImage {
+  width: 100%;
   max-width: 500px;
 }
