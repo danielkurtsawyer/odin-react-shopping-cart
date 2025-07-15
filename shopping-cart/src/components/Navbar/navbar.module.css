@@ -28,10 +28,11 @@
 }
 
 .navlinks {
-  width: 200px;
+  height: 70px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 36px;
 }
 
 .navlink {
@@ -54,4 +55,31 @@
 .cart img:hover {
   filter: invert(22%) sepia(72%) saturate(2684%) hue-rotate(193deg)
     brightness(93%) contrast(104%);
+}
+
+@media (max-width: 800px) {
+  .navbar .companyName {
+    font-size: 30px;
+  }
+  .navlinks {
+    gap: 24px;
+  }
+}
+
+@media (max-width: 600px) {
+  .navbar .companyInfo {
+    gap: 6px;
+  }
+  .navbar .companyName {
+    font-size: 24px;
+  }
+  .navlinks {
+    gap: 16px;
+  }
+}
+
+@media (max-width: 525px) {
+  .companyName {
+    display: none;
+  }
 }
