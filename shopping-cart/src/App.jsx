@@ -1,4 +1,3 @@
-import { useState } from "react";
 import NavBar from "./components/Navbar/NavBar";
 import { Outlet } from "react-router-dom";
 import "./App.css";
@@ -6,7 +5,7 @@ import "./App.css";
 function App() {
   return (
     <>
-      <NavBar />
+      <NavBar itemsInCart={0} />
       <Outlet />
     </>
   );

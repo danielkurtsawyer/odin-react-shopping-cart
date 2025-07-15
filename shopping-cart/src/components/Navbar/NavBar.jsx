@@ -2,14 +2,14 @@ import styles from "./navbar.module.css";
 import "./navbar.css";
 import { NavLink, Link } from "react-router-dom";
 
-function NavBar() {
+function NavBar({ itemsInCart }) {
   return (
     <header className={styles.navbar}>
       <Link className={styles.link} to="/">
         <div className={styles.companyInfo}>
           <img
             src="https://upload.wikimedia.org/wikipedia/commons/f/f2/Shopping-cart-transparent-icon.png"
-            alt=""
+            alt="ShoppingCentral Logo"
           />
           <div className={styles.companyName}>ShoppingCentral</div>
         </div>
@@ -23,7 +23,7 @@ function NavBar() {
           Shop
         </NavLink>
         <NavLink className={styles.navlink} to="cart">
-          Cart
+          Cart ({itemsInCart})
         </NavLink>
       </div>
     </header>
