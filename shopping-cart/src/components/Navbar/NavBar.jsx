@@ -1,6 +1,8 @@
 import styles from "./navbar.module.css";
 import "./navbar.css";
+import ShoppingCart from "../../assets/shopping cart.svg";
 import { NavLink, Link } from "react-router-dom";
+import PropTypes from "prop-types";
 
 function NavBar({ itemsInCart }) {
   return (
@@ -22,11 +24,16 @@ function NavBar({ itemsInCart }) {
         <NavLink className={styles.navlink} to="shop">
           Shop
         </NavLink>
-        <NavLink className={styles.navlink} to="cart">
-          Cart ({itemsInCart})
-        </NavLink>
+        <Link className={styles.navlink} to="cart">
+          <img src={ShoppingCart} alt="Cart" /> ({itemsInCart})
+        </Link>
       </div>
     </header>
   );
 }
+
+NavBar.propTypes = {
+  itemsInCart: PropTypes.number.isRequired,
+};
+
 export default NavBar;
