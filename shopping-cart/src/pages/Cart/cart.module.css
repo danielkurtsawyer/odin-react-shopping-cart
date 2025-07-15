@@ -1,0 +1,20 @@
+.container {
+  padding: 60px 24px 16px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  justify-content: center;
+  align-items: center;
+}
+
+.heading {
+  font-family: "Work Sans";
+  font-size: 36px;
+  color: #1f1f1f;
+}
+
+.cartText {
+  font-family: "Inter";
+  color: #1f1f1f;
+  font-size: 16px;
+}
