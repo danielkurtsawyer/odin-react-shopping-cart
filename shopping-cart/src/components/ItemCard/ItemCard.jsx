@@ -2,6 +2,7 @@ import styles from "./itemCard.module.css";
 import addIcon from "../../assets/add.svg";
 import removeIcon from "../../assets/remove.svg";
 import { useState } from "react";
+import PropTypes from "prop-types";
 
 function ItemCard({ title, price, image }) {
   const [quantity, setQuantity] = useState(1);
@@ -24,6 +25,7 @@ function ItemCard({ title, price, image }) {
           type="number"
           value={quantity}
           min="1"
+          name="quantity"
           onChange={(event) => {
             if (event.target.value >= 0) {
               setQuantity(event.target.value);
@@ -36,5 +38,11 @@ function ItemCard({ title, price, image }) {
     </div>
   );
 }
+
+ItemCard.propTypes = {
+  title: PropTypes.string.isRequired,
+  price: PropTypes.number.isRequired,
+  image: PropTypes.string.isRequired,
+};
 
 export default ItemCard;
