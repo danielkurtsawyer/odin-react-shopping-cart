@@ -1,3 +1,7 @@
 .shopContainer {
   padding: 60px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 300px);
+  justify-content: space-between;
+  row-gap: 20px;
 }

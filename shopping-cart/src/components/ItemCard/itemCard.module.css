@@ -7,6 +7,7 @@
   flex-direction: column;
   align-items: center;
   gap: 16px;
+  border: 1px solid #1f1f1f;
 
   /* https://smoothshadows.com/#djEsMSw1LDAuMSw4LDgsNCwjMDMwNzEyLCNmYWZhZmEsI2ZmZmZmZiwy */
   box-shadow: 0px 0px 0px rgba(3, 7, 18, 0.02), 1px 1px 1px rgba(3, 7, 18, 0.04),
@@ -16,6 +17,8 @@
 
 .itemCardImage {
   width: 80%;
+  height: 200px;
+  object-fit: contain;
 }
 
 .itemCardTitle,
@@ -26,6 +29,7 @@
 .itemCardTitle {
   font-size: 16px;
   color: #1f1f1f;
+  height: 80px;
 }
 
 .itemCardPrice {
