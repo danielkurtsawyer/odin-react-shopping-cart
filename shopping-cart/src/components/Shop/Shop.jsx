@@ -1,25 +1,27 @@
 import styles from "./shop.module.css";
 import ItemCard from "../ItemCard/ItemCard";
+import PropTypes from "prop-types";
 
-function Shop() {
-  const item = {
-    id: 1,
-    title: "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
-    price: 109.95,
-    description:
-      "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
-    category: "men's clothing",
-    image: "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg",
-    rating: {
-      rate: 3.9,
-      count: 120,
-    },
-  };
+function Shop({ products }) {
   return (
     <div className={styles.shopContainer}>
-      <ItemCard title={item.title} price={item.price} image={item.image} />
+      {products &&
+        products.map((product) => {
+          return (
+            <ItemCard
+              key={product.id}
+              title={product.title}
+              price={product.price}
+              image={product.image}
+            />
+          );
+        })}
     </div>
   );
 }
+
+Shop.propTypes = {
+  products: PropTypes.object.isRequired,
+};
 
 export default Shop;
