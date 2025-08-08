@@ -24,6 +24,7 @@ function Shop({ products, updateCart }) {
 
 Shop.propTypes = {
   products: PropTypes.object.isRequired,
+  updateCart: PropTypes.func.isRequired,
 };
 
 export default Shop;

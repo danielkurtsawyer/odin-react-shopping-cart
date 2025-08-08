@@ -40,9 +40,11 @@ function ItemCard({ id, title, price, image, updateCart }) {
 }
 
 ItemCard.propTypes = {
+  id: PropTypes.number.isRequired,
   title: PropTypes.string.isRequired,
   price: PropTypes.number.isRequired,
   image: PropTypes.string.isRequired,
+  updateCart: PropTypes.func.isRequired,
 };
 
 export default ItemCard;
