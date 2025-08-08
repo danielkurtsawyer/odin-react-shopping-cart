@@ -4,7 +4,7 @@ import removeIcon from "../../assets/remove.svg";
 import { useState } from "react";
 import PropTypes from "prop-types";
 
-function ItemCard({ title, price, image }) {
+function ItemCard({ id, title, price, image, updateCart }) {
   const [quantity, setQuantity] = useState(1);
   return (
     <div className={styles.itemCardContainer}>
@@ -34,7 +34,7 @@ function ItemCard({ title, price, image }) {
         />
         <img src={addIcon} alt="+" onClick={() => setQuantity(quantity + 1)} />
       </div>
-      <button>Add to Cart</button>
+      <button onClick={() => updateCart(id, quantity)}>Add to Cart</button>
     </div>
   );
 }

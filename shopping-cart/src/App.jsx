@@ -7,7 +7,30 @@ function App() {
   const [products, setProducts] = useState(null);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(true);
-  const cart = [];
+  const [cart, setCart] = useState([]);
+  const cartItems = cart.reduce(
+    (accumulator, object) => accumulator + object.quantity,
+    0
+  );
+
+  function getCartItemIndex(id) {
+    return cart.findIndex((object) => object.id === id);
+  }
+
+  function updateCart(id, quantity) {
+    const index = getCartItemIndex(id);
+    // if the cart doesn't have the item already
+    if (index < 0) {
+      setCart([...cart, { id: id, quantity: quantity }]);
+    } else {
+      // the item is already in the cart
+      cart[index] = {
+        ...cart[index],
+        quantity: cart[index].quantity + quantity,
+      };
+      setCart([...cart]);
+    }
+  }
 
   useEffect(() => {
     fetch("https://fakestoreapi.com/products", { mode: "cors" })
@@ -24,8 +47,8 @@ function App() {
 
   return (
     <>
-      <NavBar itemsInCart={0} />
-      <Outlet context={{ cart, products, loading, error }} />
+      <NavBar itemsInCart={cartItems} />
+      <Outlet context={{ updateCart, products, loading, error }} />
     </>
   );
 }

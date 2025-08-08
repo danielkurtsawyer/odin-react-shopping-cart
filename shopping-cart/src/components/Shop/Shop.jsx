@@ -2,7 +2,7 @@ import styles from "./shop.module.css";
 import ItemCard from "../ItemCard/ItemCard";
 import PropTypes from "prop-types";
 
-function Shop({ products }) {
+function Shop({ products, updateCart }) {
   return (
     <div className={styles.shopContainer}>
       {products &&
@@ -10,9 +10,11 @@ function Shop({ products }) {
           return (
             <ItemCard
               key={product.id}
+              id={product.id}
               title={product.title}
               price={product.price}
               image={product.image}
+              updateCart={updateCart}
             />
           );
         })}
