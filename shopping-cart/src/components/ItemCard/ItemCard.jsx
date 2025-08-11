@@ -4,8 +4,8 @@ import removeIcon from "../../assets/remove.svg";
 import { useState } from "react";
 import PropTypes from "prop-types";
 
-function ItemCard({ id, title, price, image, addToCart }) {
-  const [quantity, setQuantity] = useState(1);
+function ItemCard({ id, title, price, image, initialQuantity = 1, addToCart }) {
+  const [quantity, setQuantity] = useState(initialQuantity);
   return (
     <div className={styles.itemCardContainer}>
       <img className={styles.itemCardImage} src={image} alt={title} />
@@ -24,6 +24,7 @@ function ItemCard({ id, title, price, image, addToCart }) {
         <input
           type="number"
           value={quantity}
+          aria-valuenow={quantity}
           min="1"
           name="quantity"
           onChange={(event) => {
@@ -44,6 +45,7 @@ ItemCard.propTypes = {
   title: PropTypes.string.isRequired,
   price: PropTypes.number.isRequired,
   image: PropTypes.string.isRequired,
+  initialQuantity: PropTypes.number,
   addToCart: PropTypes.func.isRequired,
 };
 
