@@ -6,6 +6,11 @@ function Cart() {
   const context = useOutletContext();
   const cart = context.cart;
   const products = context.products;
+  const totalPrice = cart.reduce(
+    (accumulator, object) =>
+      accumulator + object.quantity * products[object.id - 1].price,
+    0
+  );
   return (
     <div className={styles.container}>
       <h1 className={styles.heading}>Your Cart</h1>
@@ -18,7 +23,16 @@ function Cart() {
           removeFromCart={context.removeFromCart}
         />
       ))}
-      <h1 className={styles.totalPrice}>Total</h1>
+      {cart.length > 0 ? (
+        <div className={styles.totalPriceContainer}>
+          <h1 className={styles.totalPriceHeading}>Total</h1>
+          <p className={styles.totalPrice}>${totalPrice.toFixed(2)}</p>
+        </div>
+      ) : (
+        <p className={styles.noItemsMessage}>
+          Nothing&apos;s here. Shop to Add Items to Your Cart
+        </p>
+      )}
     </div>
   );
 }
