@@ -10,7 +10,7 @@ function Shopping() {
       {context.loading && <p>Loading...</p>}
       {context.error && <p>{context.error}</p>}
       {!context.loading && !context.error && (
-        <Shop products={context.products} updateCart={context.updateCart} />
+        <Shop products={context.products} addToCart={context.addToCart} />
       )}
     </div>
   );

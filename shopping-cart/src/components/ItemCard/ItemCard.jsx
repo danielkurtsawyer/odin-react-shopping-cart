@@ -4,13 +4,13 @@ import removeIcon from "../../assets/remove.svg";
 import { useState } from "react";
 import PropTypes from "prop-types";
 
-function ItemCard({ id, title, price, image, updateCart }) {
+function ItemCard({ id, title, price, image, addToCart }) {
   const [quantity, setQuantity] = useState(1);
   return (
     <div className={styles.itemCardContainer}>
       <img className={styles.itemCardImage} src={image} alt={title} />
       <div className={styles.itemCardTitle}>{title}</div>
-      <div className={styles.itemCardPrice}>${price}</div>
+      <div className={styles.itemCardPrice}>${price.toFixed(2)}</div>
       <div className={styles.itemCardQuantity}>
         <img
           src={removeIcon}
@@ -34,7 +34,7 @@ function ItemCard({ id, title, price, image, updateCart }) {
         />
         <img src={addIcon} alt="+" onClick={() => setQuantity(quantity + 1)} />
       </div>
-      <button onClick={() => updateCart(id, quantity)}>Add to Cart</button>
+      <button onClick={() => addToCart(id, quantity)}>Add to Cart</button>
     </div>
   );
 }
@@ -44,7 +44,7 @@ ItemCard.propTypes = {
   title: PropTypes.string.isRequired,
   price: PropTypes.number.isRequired,
   image: PropTypes.string.isRequired,
-  updateCart: PropTypes.func.isRequired,
+  addToCart: PropTypes.func.isRequired,
 };
 
 export default ItemCard;

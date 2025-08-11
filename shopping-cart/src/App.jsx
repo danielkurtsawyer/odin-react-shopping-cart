@@ -17,7 +17,7 @@ function App() {
     return cart.findIndex((object) => object.id === id);
   }
 
-  function updateCart(id, quantity) {
+  function addToCart(id, quantity) {
     const index = getCartItemIndex(id);
     // if the cart doesn't have the item already
     if (index < 0) {
@@ -30,6 +30,24 @@ function App() {
       };
       setCart([...cart]);
     }
+  }
+
+  function updateCart(id, quantity) {
+    if (quantity > 0) {
+      const index = getCartItemIndex(id);
+
+      cart[index] = {
+        ...cart[index],
+        quantity: quantity,
+      };
+      setCart([...cart]);
+    }
+  }
+
+  function removeFromCart(id) {
+    const index = getCartItemIndex(id);
+    cart.splice(index, 1);
+    setCart([...cart]);
   }
 
   useEffect(() => {
@@ -48,7 +66,17 @@ function App() {
   return (
     <>
       <NavBar itemsInCart={cartItems} />
-      <Outlet context={{ updateCart, products, loading, error }} />
+      <Outlet
+        context={{
+          updateCart,
+          addToCart,
+          removeFromCart,
+          products,
+          cart,
+          loading,
+          error,
+        }}
+      />
     </>
   );
 }

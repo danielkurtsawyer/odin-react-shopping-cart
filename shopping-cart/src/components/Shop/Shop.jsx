@@ -2,7 +2,7 @@ import styles from "./shop.module.css";
 import ItemCard from "../ItemCard/ItemCard";
 import PropTypes from "prop-types";
 
-function Shop({ products, updateCart }) {
+function Shop({ products, addToCart }) {
   return (
     <div className={styles.shopContainer}>
       {products &&
@@ -14,7 +14,7 @@ function Shop({ products, updateCart }) {
               title={product.title}
               price={product.price}
               image={product.image}
-              updateCart={updateCart}
+              addToCart={addToCart}
             />
           );
         })}
@@ -24,7 +24,7 @@ function Shop({ products, updateCart }) {
 
 Shop.propTypes = {
   products: PropTypes.object.isRequired,
-  updateCart: PropTypes.func.isRequired,
+  addToCart: PropTypes.func.isRequired,
 };
 
 export default Shop;
