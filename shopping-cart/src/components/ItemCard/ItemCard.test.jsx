@@ -147,7 +147,7 @@ describe("ItemCard", () => {
     expect(input.value).toEqual("5");
   });
 
-  it("should not update the number input value if less than 0", async () => {
+  it("should not accept negative number input values", async () => {
     const user = userEvent.setup();
     render(
       <ItemCard
