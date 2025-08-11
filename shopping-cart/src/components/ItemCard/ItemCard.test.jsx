@@ -2,7 +2,6 @@ import { vi, describe, it, expect } from "vitest";
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import ItemCard from "./ItemCard";
-import { input } from "@testing-library/user-event/dist/cjs/event/input.js";
 
 describe("ItemCard", () => {
   it("should render an item card with the correct product information and starting quantity of one", () => {
@@ -162,6 +161,6 @@ describe("ItemCard", () => {
 
     await user.clear(input);
     await user.type(input, "-1");
-    expect(input.value).toEqual("1");
+    expect(input.value).toBe("1");
   });
 });
