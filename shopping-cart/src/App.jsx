@@ -18,17 +18,19 @@ function App() {
   }
 
   function addToCart(id, quantity) {
-    const index = getCartItemIndex(id);
-    // if the cart doesn't have the item already
-    if (index < 0) {
-      setCart([...cart, { id: id, quantity: quantity }]);
-    } else {
-      // the item is already in the cart
-      cart[index] = {
-        ...cart[index],
-        quantity: cart[index].quantity + quantity,
-      };
-      setCart([...cart]);
+    if (quantity > 0) {
+      const index = getCartItemIndex(id);
+      // if the cart doesn't have the item already
+      if (index < 0) {
+        setCart([...cart, { id: id, quantity: quantity }]);
+      } else {
+        // the item is already in the cart
+        cart[index] = {
+          ...cart[index],
+          quantity: cart[index].quantity + quantity,
+        };
+        setCart([...cart]);
+      }
     }
   }
 

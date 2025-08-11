@@ -40,10 +40,10 @@ function CartItemCard({ product, numItem, updateCart, removeFromCart }) {
             name="quantity"
             onChange={(event) => {
               if (event.target.value === 0) {
-                setQuantity(event.target.value);
+                setQuantity(parseInt(event.target.value));
               } else if (event.target.value >= 0) {
-                setQuantity(+event.target.value);
-                updateCart(product.id, quantity + +event.target.value);
+                setQuantity(parseInt(event.target.value));
+                updateCart(product.id, quantity + parseInt(event.target.value));
               }
             }}
           />

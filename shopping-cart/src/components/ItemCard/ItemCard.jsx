@@ -29,7 +29,7 @@ function ItemCard({ id, title, price, image, initialQuantity = 1, addToCart }) {
           name="quantity"
           onChange={(event) => {
             if (event.target.value >= 0) {
-              setQuantity(+event.target.value);
+              setQuantity(parseInt(event.target.value));
             }
           }}
         />
