@@ -126,6 +126,42 @@ describe("ItemCard", () => {
     expect(input).toBeInTheDocument();
 
     await user.click(decrementImg);
-    expect(input.ariaValueNow).toEqual("1");
+    expect(input.value).toEqual("1");
+  });
+
+  it("should update the number input value if greater than 0", async () => {
+    const user = userEvent.setup();
+    render(
+      <ItemCard
+        id={1}
+        title="Test Title"
+        price={49.99}
+        image="https://www.wildblueyondermusic.com/assets/logo-B4oS1OYH.png"
+      />
+    );
+    const input = screen.getByRole("spinbutton", { value: { now: 1 } });
+    expect(input).toBeInTheDocument();
+
+    await user.clear(input);
+    await user.type(input, "5");
+    expect(input.value).toEqual("5");
+  });
+
+  it("should not update the number input value if less than 0", async () => {
+    const user = userEvent.setup();
+    render(
+      <ItemCard
+        id={1}
+        title="Test Title"
+        price={49.99}
+        image="https://www.wildblueyondermusic.com/assets/logo-B4oS1OYH.png"
+      />
+    );
+    const input = screen.getByRole("spinbutton", { value: { now: 1 } });
+    expect(input).toBeInTheDocument();
+
+    await user.clear(input);
+    await user.type(input, "-1");
+    expect(input.value).toEqual("1");
   });
 });
