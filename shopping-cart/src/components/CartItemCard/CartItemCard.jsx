@@ -20,7 +20,7 @@ function CartItemCard({ product, numItem, updateCart, removeFromCart }) {
 
       <div className={styles.itemCardPriceContainer}>
         <div className={styles.itemCardPrice}>
-          ${(product.price * quantity).toFixed(2)}
+          ${quantity && (product.price * quantity).toFixed(2)}
         </div>
         <div className={styles.itemCardQuantity}>
           <img
@@ -39,8 +39,8 @@ function CartItemCard({ product, numItem, updateCart, removeFromCart }) {
             min="0"
             name="quantity"
             onChange={(event) => {
-              if (event.target.value === 0) {
-                setQuantity(parseInt(event.target.value));
+              if (event.target.value === 0 || event.target.value === "") {
+                setQuantity(0);
               } else if (event.target.value >= 0) {
                 setQuantity(parseInt(event.target.value));
                 updateCart(product.id, quantity + parseInt(event.target.value));

@@ -23,12 +23,15 @@ function ItemCard({ id, title, price, image, initialQuantity = 1, addToCart }) {
         />
         <input
           type="number"
-          value={quantity}
+          value={Number(quantity)}
           aria-valuenow={quantity}
           min="1"
           name="quantity"
           onChange={(event) => {
-            if (event.target.value >= 0) {
+            if (event.target.value === "") {
+              setQuantity(0);
+            } else if (event.target.value >= 0) {
+              console.log(quantity);
               setQuantity(parseInt(event.target.value));
             }
           }}
