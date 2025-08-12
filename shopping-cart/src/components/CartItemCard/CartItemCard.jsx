@@ -44,9 +44,10 @@ function CartItemCard({ product, numItem, updateCart, removeFromCart }) {
                 setQuantity("");
               } else if (event.target.value < 0) {
                 setQuantity(1);
+                updateCart(product.id, 1);
               } else if (event.target.value >= 0) {
                 setQuantity(parseInt(event.target.value));
-                updateCart(product.id, quantity + parseInt(event.target.value));
+                updateCart(product.id, parseInt(event.target.value));
               }
             }}
           />
