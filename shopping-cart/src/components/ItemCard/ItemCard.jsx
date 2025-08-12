@@ -30,6 +30,8 @@ function ItemCard({ id, title, price, image, initialQuantity = 1, addToCart }) {
           onChange={(event) => {
             if (event.target.value === "") {
               setQuantity("");
+            } else if (event.target.value < 0) {
+              setQuantity(1);
             } else if (event.target.value >= 0) {
               console.log(quantity);
               setQuantity(parseInt(event.target.value));

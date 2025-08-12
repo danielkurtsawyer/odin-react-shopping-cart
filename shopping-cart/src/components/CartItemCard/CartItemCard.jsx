@@ -41,6 +41,8 @@ function CartItemCard({ product, numItem, updateCart, removeFromCart }) {
             onChange={(event) => {
               if (event.target.value === 0 || event.target.value === "") {
                 setQuantity("");
+              } else if (event.target.value < 0) {
+                setQuantity(1);
               } else if (event.target.value >= 0) {
                 setQuantity(parseInt(event.target.value));
                 updateCart(product.id, quantity + parseInt(event.target.value));
