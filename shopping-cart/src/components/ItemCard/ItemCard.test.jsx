@@ -163,4 +163,21 @@ describe("ItemCard", () => {
     await user.type(input, "-1");
     expect(input.value).toBe("1");
   });
+  it("negative input values should revert to 1", async () => {
+    const user = userEvent.setup();
+    render(
+      <ItemCard
+        id={1}
+        title="Test Title"
+        price={49.99}
+        image="https://www.wildblueyondermusic.com/assets/logo-B4oS1OYH.png"
+      />
+    );
+    const input = screen.getByRole("spinbutton", { value: { now: 1 } });
+    expect(input).toBeInTheDocument();
+
+    await user.clear(input);
+    await user.type(input, "-9");
+    expect(input.value).toBe("1");
+  });
 });
