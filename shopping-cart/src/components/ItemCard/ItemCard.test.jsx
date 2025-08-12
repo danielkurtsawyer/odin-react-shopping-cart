@@ -34,8 +34,8 @@ describe("ItemCard", () => {
     expect(button).toBeInTheDocument();
   });
 
-  it("should call the onClick function when clicked", async () => {
-    const onClick = vi.fn();
+  it("should call the addToCart function when clicked", async () => {
+    const addToCart = vi.fn();
     const user = userEvent.setup();
     render(
       <ItemCard
@@ -43,28 +43,28 @@ describe("ItemCard", () => {
         title="Test Title"
         price={49.99}
         image="https://www.wildblueyondermusic.com/assets/logo-B4oS1OYH.png"
-        addToCart={onClick}
+        addToCart={addToCart}
       />
     );
 
     const button = screen.getByRole("button", { name: "Add to Cart" });
     await user.click(button);
-    expect(onClick).toHaveBeenCalled();
+    expect(addToCart).toHaveBeenCalled();
   });
 
-  it("should not call the onClick function when it isn't clicked", async () => {
-    const onClick = vi.fn();
+  it("should not call the addToCart function when it isn't clicked", async () => {
+    const addToCart = vi.fn();
     render(
       <ItemCard
         id={1}
         title="Test Title"
         price={49.99}
         image="https://www.wildblueyondermusic.com/assets/logo-B4oS1OYH.png"
-        addToCart={onClick}
+        addToCart={addToCart}
       />
     );
 
-    expect(onClick).not.toHaveBeenCalled();
+    expect(addToCart).not.toHaveBeenCalled();
   });
 
   it("should increment quantity when the + img is clicked", async () => {
