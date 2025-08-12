@@ -58,10 +58,19 @@
 .itemCardPriceContainer button {
   width: 100px;
   border-radius: 12px;
-  background-color: #e0e0e0;
-  border: 2px solid #bdbdbd;
+  background-color: #7c7c7c;
+  border: none;
+  color: #f0f0f0;
 
   padding: 6px 12px;
+  box-shadow: inset 0 1px 0 #a6a6a6ad, 0 1px 3px hsla(0, 0%, 0%, 0.2);
+}
+
+.itemCardPriceContainer button:hover {
+  background-color: rgb(253, 184, 184);
+  color: rgb(145, 27, 27);
+  box-shadow: inset 0 1px 0 rgba(246, 215, 215, 0.736),
+    0 1px 3px hsla(0, 0%, 0%, 0.2);
 }
 
 .itemCardQuantity {
@@ -75,6 +84,11 @@
   width: 50px;
   text-align: center;
   color: #1f1f1f;
+
+  border-radius: 6px;
+  border: 1px solid #bdbdbd;
+
+  box-shadow: inset 0 2px 2px hsla(0, 0%, 0%, 0.1);
 }
 
 .itemCardQuantity input::-webkit-inner-spin-button,
