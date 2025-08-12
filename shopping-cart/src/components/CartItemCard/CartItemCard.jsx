@@ -20,7 +20,7 @@ function CartItemCard({ product, numItem, updateCart, removeFromCart }) {
 
       <div className={styles.itemCardPriceContainer}>
         <div className={styles.itemCardPrice}>
-          ${quantity && (product.price * quantity).toFixed(2)}
+          ${quantity && product.price.toFixed(2)}
         </div>
         <div className={styles.itemCardQuantity}>
           <img
