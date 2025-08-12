@@ -36,6 +36,7 @@ function CartItemCard({ product, numItem, updateCart, removeFromCart }) {
           <input
             type="number"
             value={quantity}
+            aria-valuenow={quantity}
             min="0"
             name="quantity"
             onChange={(event) => {
