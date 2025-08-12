@@ -11,6 +11,7 @@ body {
 
 #root {
   background-color: #fafafa;
+  min-height: min-content;
   height: 100%;
   display: grid;
   grid-template-rows: 100px 1fr;

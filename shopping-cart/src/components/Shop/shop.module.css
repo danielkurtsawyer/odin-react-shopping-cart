@@ -6,3 +6,9 @@
   row-gap: 20px;
   column-gap: 16px;
 }
+
+@media (max-width: 500px) {
+  .shopContainer {
+    padding: 28px 0px;
+  }
+}

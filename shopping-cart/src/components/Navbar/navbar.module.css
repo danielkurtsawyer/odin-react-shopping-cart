@@ -52,7 +52,7 @@
   align-items: center;
 }
 
-.cart img:hover {
+.cart:hover {
   filter: invert(22%) sepia(72%) saturate(2684%) hue-rotate(193deg)
     brightness(93%) contrast(104%);
 }
