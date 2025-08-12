@@ -30,7 +30,7 @@ function Cart() {
         </div>
       ) : (
         <p className={styles.noItemsMessage}>
-          Nothing&apos;s here. Shop to Add Items to Your Cart
+          Nothing&apos;s here. Shop to add items to your cart.
         </p>
       )}
     </div>
