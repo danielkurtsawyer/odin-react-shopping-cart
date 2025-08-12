@@ -26,7 +26,7 @@ function NavBar({ itemsInCart }) {
         </NavLink>
         <NavLink className={styles.cart} to="cart">
           <img src={ShoppingCart} alt="Cart" />
-          <span>({itemsInCart})</span>
+          <span>({+itemsInCart})</span>
         </NavLink>
       </div>
     </header>

@@ -17,26 +17,26 @@ function ItemCard({ id, title, price, image, initialQuantity = 1, addToCart }) {
           alt="-"
           onClick={() => {
             if (quantity > 1) {
-              setQuantity(quantity - 1);
+              setQuantity(+quantity - 1);
             }
           }}
         />
         <input
           type="number"
-          value={Number(quantity)}
+          value={quantity}
           aria-valuenow={quantity}
           min="1"
           name="quantity"
           onChange={(event) => {
             if (event.target.value === "") {
-              setQuantity(0);
+              setQuantity("");
             } else if (event.target.value >= 0) {
               console.log(quantity);
               setQuantity(parseInt(event.target.value));
             }
           }}
         />
-        <img src={addIcon} alt="+" onClick={() => setQuantity(quantity + 1)} />
+        <img src={addIcon} alt="+" onClick={() => setQuantity(+quantity + 1)} />
       </div>
       <button onClick={() => addToCart(id, quantity)}>Add to Cart</button>
     </div>

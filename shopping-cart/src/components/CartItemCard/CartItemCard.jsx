@@ -28,7 +28,7 @@ function CartItemCard({ product, numItem, updateCart, removeFromCart }) {
             alt="-"
             onClick={() => {
               if (quantity > 1) {
-                setQuantity(quantity - 1);
+                setQuantity(+quantity - 1);
                 updateCart(product.id, quantity - 1);
               }
             }}
@@ -40,7 +40,7 @@ function CartItemCard({ product, numItem, updateCart, removeFromCart }) {
             name="quantity"
             onChange={(event) => {
               if (event.target.value === 0 || event.target.value === "") {
-                setQuantity(0);
+                setQuantity("");
               } else if (event.target.value >= 0) {
                 setQuantity(parseInt(event.target.value));
                 updateCart(product.id, quantity + parseInt(event.target.value));
@@ -51,7 +51,7 @@ function CartItemCard({ product, numItem, updateCart, removeFromCart }) {
             src={addIcon}
             alt="+"
             onClick={() => {
-              setQuantity(quantity + 1);
+              setQuantity(+quantity + 1);
               updateCart(product.id, quantity + 1);
             }}
           />
