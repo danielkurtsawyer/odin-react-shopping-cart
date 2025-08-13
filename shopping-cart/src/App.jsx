@@ -56,6 +56,7 @@ function App() {
     fetch("https://fakestoreapi.com/products", { mode: "cors" })
       .then((response) => {
         if (response.status >= 400) {
+          console.log("error");
           throw new Error("server error");
         }
         return response.json();
