@@ -3,7 +3,6 @@ import ItemCard from "../ItemCard/ItemCard";
 import PropTypes from "prop-types";
 
 function Shop({ products, addToCart }) {
-  console.log(products);
   return (
     <div className={styles.shopContainer} data-testid="shop-container">
       {products &&
