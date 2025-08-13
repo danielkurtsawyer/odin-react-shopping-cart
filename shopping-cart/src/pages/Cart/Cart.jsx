@@ -12,7 +12,7 @@ function Cart() {
     0
   );
   return (
-    <div className={styles.container}>
+    <div className={styles.container} data-testid="cart-container">
       <h1 className={styles.heading}>Your Cart</h1>
       {cart.map((item) => (
         <CartItemCard
