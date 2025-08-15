@@ -10,7 +10,7 @@ body {
 }
 
 #root {
-  background-color: #fafafa;
+  background-color: #ececec;
   min-height: min-content;
   height: 100%;
   display: grid;

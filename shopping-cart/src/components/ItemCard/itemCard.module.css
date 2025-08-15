@@ -1,15 +1,15 @@
 .itemCardContainer {
   width: 300px;
-  padding: 16px 24px;
+  padding: 24px;
   background-color: #ffffff;
   border-radius: 12px;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 16px;
-  border: 2px solid #e0e0e0;
+  border: 2px solid #b0b0b0;
 
-  box-shadow: 0 3px 4px hsla(0, 0%, 0%, 0.08);
+  box-shadow: 0 3px 4px hsla(0, 0%, 0%, 0.1);
 }
 
 .itemCardImage {
@@ -24,7 +24,7 @@
 }
 
 .itemCardTitle {
-  margin-top: 12px;
+  margin-top: 24px;
   font-size: 16px;
   color: #1f1f1f;
   height: 40px;
@@ -37,6 +37,7 @@
   font-size: 24px;
   text-align: center;
   color: black;
+  font-weight: 550;
 }
 
 .itemCardQuantity {
@@ -76,4 +77,9 @@
 .itemCardContainer button:hover {
   background-color: #005eb2;
   box-shadow: inset 0 1px 0 #57a0e09e, 0 1px 3px hsla(0, 0%, 0%, 0.2);
+}
+
+.itemCardQuantity img:hover {
+  filter: invert(22%) sepia(72%) saturate(2684%) hue-rotate(193deg)
+    brightness(93%) contrast(104%);
 }

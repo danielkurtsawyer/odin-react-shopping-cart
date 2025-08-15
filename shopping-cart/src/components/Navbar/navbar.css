@@ -1,7 +1,13 @@
 a.active {
   color: #0072d0;
 }
+
 .active img {
+  filter: invert(22%) sepia(72%) saturate(2684%) hue-rotate(193deg)
+    brightness(93%) contrast(104%);
+}
+
+.cart:not(.active):hover {
   filter: invert(22%) sepia(72%) saturate(2684%) hue-rotate(193deg)
     brightness(93%) contrast(104%);
 }

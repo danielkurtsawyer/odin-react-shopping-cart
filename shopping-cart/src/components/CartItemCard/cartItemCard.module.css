@@ -8,7 +8,7 @@
   padding: 20px 24px;
   background-color: #ffffff;
   border-radius: 12px;
-  border: 2px solid #e0e0e0;
+  border: 2px solid #b0b0b0;
   box-shadow: 0 3px 4px hsla(0, 0%, 0%, 0.08);
 }
 
@@ -59,7 +59,7 @@
 .itemCardPriceContainer button {
   width: 100px;
   border-radius: 12px;
-  background-color: #7c7c7c;
+  background-color: #6f6f6f;
   border: none;
   color: #ffffff;
 
@@ -90,6 +90,11 @@
   border: 1px solid #bdbdbd;
 
   box-shadow: inset 0 2px 2px hsla(0, 0%, 0%, 0.1);
+}
+
+.itemCardQuantity img:hover {
+  filter: invert(22%) sepia(72%) saturate(2684%) hue-rotate(193deg)
+    brightness(93%) contrast(104%);
 }
 
 .itemCardQuantity input::-webkit-inner-spin-button,

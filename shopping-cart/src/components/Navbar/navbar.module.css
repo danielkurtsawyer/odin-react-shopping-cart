@@ -47,14 +47,12 @@
 }
 
 .cart {
-  composes: navlink;
+  text-decoration: none;
+  color: #1f1f1f;
+  font-family: "Inter";
+  font-size: 16px;
   display: flex;
   align-items: center;
-}
-
-.cart:hover {
-  filter: invert(22%) sepia(72%) saturate(2684%) hue-rotate(193deg)
-    brightness(93%) contrast(104%);
 }
 
 @media (max-width: 800px) {
